@@ -1,0 +1,88 @@
+.expense-container {
+    min-height: 100vh;
+    justify-content: center;
+    background-color: #141415;
+    color: white;
+    padding-left: 200px;
+    font-family: 'Arial', sans-serif;
+}
+
+.add-expense {
+    background-color: #2b2b2e;
+    padding: 15px;
+    border-radius: 8px;
+    width: 85%;
+}
+
+.add-expense h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.add-expense form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.add-expense input {
+    background-color: #2b2b2e;
+    border: 1px solid #3d3d3d;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    width: 150px;
+}
+
+.add-expense button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.expense-table {
+    background-color: #28282B;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 85%;
+}
+
+.expense-table h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.expense-table button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.no-data {
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border: 1px solid #3d3d3d;
+}
