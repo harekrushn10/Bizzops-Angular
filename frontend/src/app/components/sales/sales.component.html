@@ -1,1 +1,126 @@
-<p>sales works!</p>
+<div class="sales-container">
+    <div class="sales-content">
+      <h1 class="sales-header">
+        <i class="back-icon" (click)="navigateToDashboard()">←</i> 
+        Sales
+      </h1>
+      
+      <div class="sales-wrapper">
+        <!-- Add Sales Section -->
+        <div class="add-sales-section">
+          <h2 class="section-title">Add Sales</h2>
+          
+          <form (ngSubmit)="handleAddSales()" class="sales-form">
+            <select 
+              [(ngModel)]="product" 
+              name="product"
+              required
+              class="form-input"
+            >
+              <option value="" disabled>Select a product</option>
+              <option 
+                *ngFor="let item of inventory" 
+                [value]="item._id"
+              >
+                {{item.item}} - (Stock In: {{item.stockRemain}})
+              </option>
+            </select>
+  
+            <input
+              type="text"
+              placeholder="Price"
+              [(ngModel)]="price"
+              name="price"
+              required
+              class="form-input"
+            />
+  
+            <input
+              type="text"
+              placeholder="Profit %"
+              [(ngModel)]="profitInPercent"
+              name="profitInPercent"
+              required
+              class="form-input"
+            />
+  
+            <input
+              type="text"
+              placeholder="Qty"
+              [(ngModel)]="qty"
+              name="qty"
+              required
+              class="form-input"
+            />
+  
+            <input
+              type="date"
+              [(ngModel)]="date"
+              name="date"
+              required
+              class="form-input"
+            />
+  
+            <button 
+              type="submit" 
+              class="submit-button"
+            >
+              Add Sale
+            </button>
+          </form>
+        </div>
+  
+        <!-- Sales Table Section -->
+        <div class="sales-table-section">
+          <h2 class="section-title">Sales Records</h2>
+          
+          <div class="table-container">
+            <table class="sales-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Profit</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="sales.length === 0">
+                  <td colspan="7" class="no-data">
+                    No sales data available.
+                  </td>
+                </tr>
+                <tr *ngFor="let sale of sales">
+                  <td>{{formatDate(sale.date)}}</td>
+                  <td>{{sale.productName}}</td>
+                  <td>₹{{sale.price.toFixed(2)}}</td>
+                  <td>{{sale.qty}}</td>
+                  <td>₹{{(sale.price * sale.qty).toFixed(2)}}</td>
+                  <td class="profit-cell">₹ {{sale.profit}}</td>
+                  <td class="cost-cell">₹ {{sale.cost}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Popup for Sale Added -->
+    <div *ngIf="isPopupVisible" class="popup-overlay">
+      <div class="popup-content">
+        <h2>Success!</h2>
+        <p>Sale added successfully.</p>
+        <div class="popup-actions">
+          <button 
+            (click)="handleClosePopup()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

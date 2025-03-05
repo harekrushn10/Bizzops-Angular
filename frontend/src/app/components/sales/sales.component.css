@@ -1,0 +1,150 @@
+.sales-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #141415;
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .sales-content {
+    width: 100%;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .sales-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  .back-icon {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .sales-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-sales-section, .sales-table-section {
+    width: 90%;
+    background-color: #28282B;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .sales-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .form-input {
+    background-color: #2b2b2e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .submit-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .sales-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .download-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .sales-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .sales-table th, .sales-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sales-table thead {
+    background-color: #1f1f1f;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profit-cell {
+    color: #87ff8b;
+  }
+  
+  .cost-cell {
+    color: #ff7676;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #28282B;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .popup-actions button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+  }

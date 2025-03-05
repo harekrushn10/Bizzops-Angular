@@ -1,1 +1,99 @@
-<p>inventory works!</p>
+<div class="inventory-container">
+    <div class="inventory-main">
+      <div class="inventory-content">
+        <div class="add-item-section">
+          <h1 class="add-item-title">Add Item</h1>
+          <form (ngSubmit)="handleAddInventory()" class="inventory-form">
+            <div class="form-row">
+              <input 
+                type="text" 
+                [(ngModel)]="newItem.item" 
+                name="item"
+                placeholder="Item" 
+                class="form-input"
+                required
+              >
+              <input 
+                type="text" 
+                [(ngModel)]="newItem.category" 
+                name="category"
+                placeholder="Category" 
+                class="form-input"
+                required
+              >
+              <input 
+                type="number" 
+                [(ngModel)]="newItem.stockRemain" 
+                name="stockRemain"
+                placeholder="Add Stock" 
+                class="form-input"
+                required
+              >
+              <input 
+                type="date" 
+                [(ngModel)]="newItem.date" 
+                name="date"
+                class="form-input"
+                required
+              >
+              <button type="submit" class="add-button">
+                + Add Item
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="inventory-table-section">
+          <div class="inventory-table">
+            <div class="table-header">
+              <div class="table-cell">Item</div>
+              <div class="table-cell">Category</div>
+              <div class="table-cell">Stock</div>
+              <div class="table-cell">Actions</div>
+            </div>
+            <div class="table-body">
+              <div *ngFor="let item of inventoryItems" class="table-row">
+                <div class="table-cell">{{ item.item }}</div>
+                <div class="table-cell">{{ item.category }}</div>
+                <div class="table-cell">{{ item.stockRemain }}</div>
+                <div class="table-cell action-buttons">
+                  <button (click)="openStockModal(item, 'add')" class="action-btn add-btn">+</button>
+                  <button (click)="openStockModal(item, 'remove')" class="action-btn remove-btn">-</button>
+                  <button (click)="deleteItem(item)" class="action-btn delete-btn">🗑️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Stock Adjustment Modal -->
+      <div *ngIf="stockModalOpen" class="modal-overlay">
+        <div class="modal-content">
+          <h2>{{ stockAction === 'add' ? 'Add Stock' : 'Remove Stock' }}</h2>
+          <input 
+            type="number" 
+            [(ngModel)]="stockQuantity" 
+            placeholder="Quantity"
+            class="stock-input"
+          >
+          <div class="modal-actions">
+            <button (click)="adjustStock()" class="confirm-btn">Confirm</button>
+            <button (click)="closeStockModal()" class="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Delete Confirmation Modal -->
+      <div *ngIf="deleteModalOpen" class="modal-overlay">
+        <div class="modal-content">
+          <h2>Confirm Deletion</h2>
+          <p>Are you sure you want to delete this item?</p>
+          <div class="modal-actions">
+            <button (click)="confirmDelete()" class="confirm-btn">Delete</button>
+            <button (click)="cancelDelete()" class="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
