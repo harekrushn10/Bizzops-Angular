@@ -1,1 +1,71 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <div class="dashboard-content">
+      <h1 class="dashboard-title">Dashboard</h1>
+  
+      <div class="cards-container">
+        <!-- Total Sales Card -->
+        <div class="dashboard-card">
+          <div class="card-header">
+            <fa-icon [icon]="faChartGantt" class="card-header-icon text-blue-600"></fa-icon>
+            <span class="card-title">Total Sales</span>
+          </div>
+          <div class="card-value">₹ {{ totalSale | number:'1.0-0' }}</div>
+          <div class="card-subtitle">From All Time</div>
+        </div>
+  
+        <!-- Total Profit Card -->
+        <div class="dashboard-card">
+          <div class="card-header">
+            <fa-icon [icon]="faMoneyBill1" class="card-header-icon text-teal-400"></fa-icon>
+            <span class="card-title">Total Profit</span>
+          </div>
+          <div class="card-value">₹ {{ totalProfit | number:'1.0-0' }}</div>
+          <div class="card-subtitle">From All Time</div>
+        </div>
+  
+        <!-- Total Cost Card -->
+        <div class="dashboard-card">
+          <div class="card-header">
+            <fa-icon [icon]="faDollar" class="card-header-icon text-red-400"></fa-icon>
+            <span class="card-title">Total Cost</span>
+          </div>
+          <div class="card-value">₹ {{ totalCost | number:'1.0-0' }}</div>
+          <div class="card-subtitle">From All Time</div>
+        </div>
+  
+        <!-- Total Net Income Card -->
+        <div class="dashboard-card">
+          <div class="card-header">
+            <fa-icon [icon]="faWallet" class="card-header-icon text-green-400"></fa-icon>
+            <span class="card-title">Total Net Income</span>
+          </div>
+          <div class="card-value">₹ {{ totalProfit - totalExpense | number:'1.0-0' }}</div>
+          <div class="card-subtitle">From All Time</div>
+        </div>
+      </div>
+  
+      <!-- Additional Sections -->
+      <div class="additional-section">
+        <div class="small-card">
+          <div class="small-card-title">Orders</div>
+          <div class="small-card-value">{{ orders }}</div>
+        </div>
+        <div class="small-card">
+          <div class="small-card-title">Pending Orders</div>
+          <div class="small-card-value">{{ pendingOrders }}</div>
+        </div>
+        <div class="small-card">
+          <div class="small-card-title">Total Invoices</div>
+          <div class="small-card-value">{{ invoices }}</div>
+        </div>
+        <div class="small-card">
+          <div class="small-card-title">Unpaid Invoices</div>
+          <div class="small-card-value">₹ {{ unpaidInvoices | number:'1.0-0' }}</div>
+        </div>
+        <div class="small-card">
+          <div class="small-card-title">Active Customers</div>
+          <div class="small-card-value">{{ customers }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
