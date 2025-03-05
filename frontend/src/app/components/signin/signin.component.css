@@ -1,0 +1,116 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    height: 100vh;
+}
+
+/* Left Section - Login */
+.left-section {
+    width: 320px;
+    padding: 30px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #222;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Sign Up Link */
+.signup-link {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.signup-link a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Login Button */
+button {
+    width: 120px;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Right Side - Business Info */
+.business-info {
+    width: 65%;
+    color: white;
+}
+
+.business-info h1 {
+    font-size: 33px;
+    font-weight: bold;
+}
+
+/* Business info list items */
+.business-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.business-info li {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+/* BizzOps Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 180px;
+}
