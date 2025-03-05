@@ -1,0 +1,37 @@
+<div class="expense-container">
+    <div class="add-expense">
+        <h2>Add Expense</h2>
+        <form (submit)="addExpense($event)">
+            <input type="text" placeholder="Item" [(ngModel)]="name" name="name" required />
+            <input type="number" placeholder="Amount" [(ngModel)]="expAmount" name="expAmount" required />
+            <input type="text" placeholder="Description" [(ngModel)]="description" name="description" required />
+            <input type="date" [(ngModel)]="date" name="date" required />
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+
+    <div class="expense-table">
+        <h2>Expense Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="expenses.length === 0">
+                    <td colspan="4" class="no-data">No expense data available.</td>
+                </tr>
+                <tr *ngFor="let expense of expenses">
+                    <td>{{ formatDate(expense.date) }}</td>
+                    <td>{{ expense.name }}</td>
+                    <td>₹{{ expense.expAmount }}</td>
+                    <td>{{ expense.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
