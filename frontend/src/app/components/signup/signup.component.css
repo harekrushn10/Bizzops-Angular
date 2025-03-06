@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    width: 800px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.left {
+    flex: 1;
+}
+.right {
+    flex: 1;
+    padding-left: 30px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.logo span {
+    background: white;
+    color: black;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+input::placeholder {
+    color: #bbb;
+}
+.register-btn {
+    background: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+.signin-link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.signin-link a {
+    color: white;
+    text-decoration: underline;
+}
+.features {
+    font-size: 14px;
+    line-height: 1.8;
+}
+.features li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.features li::before {
+    content: '\2713';
+    color: #4CAF50;
+    margin-right: 8px;
+    font-weight: bold;
+}
